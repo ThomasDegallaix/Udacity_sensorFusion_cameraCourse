@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/thomas/Udacity_sensorFusion_cameraCourse/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -isystem /usr/local/include/opencv4  -g   -std=c++11 -std=gnu++11 -o CMakeFiles/2D_feature_tracking.dir/src/matching2D_Student.cpp.o -c /home/thomas/Udacity_sensorFusion_cameraCourse/src/matching2D_Student.cpp",
+  "file": "/home/thomas/Udacity_sensorFusion_cameraCourse/src/matching2D_Student.cpp"
+},
+{
+  "directory": "/home/thomas/Udacity_sensorFusion_cameraCourse/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -isystem /usr/local/include/opencv4  -g   -std=c++11 -std=gnu++11 -o CMakeFiles/2D_feature_tracking.dir/src/MidTermProject_Camera_Student.cpp.o -c /home/thomas/Udacity_sensorFusion_cameraCourse/src/MidTermProject_Camera_Student.cpp",
+  "file": "/home/thomas/Udacity_sensorFusion_cameraCourse/src/MidTermProject_Camera_Student.cpp"
+}
+]
