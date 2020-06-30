@@ -1,3 +1,0 @@
-/home/thomas/Udacity_sensorFusion_cameraCourse/build/CMakeFiles/rebuild_cache.dir
-/home/thomas/Udacity_sensorFusion_cameraCourse/build/CMakeFiles/2D_feature_tracking.dir
-/home/thomas/Udacity_sensorFusion_cameraCourse/build/CMakeFiles/edit_cache.dir
