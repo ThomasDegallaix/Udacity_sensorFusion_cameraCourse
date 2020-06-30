@@ -6,7 +6,7 @@ if __name__ == "__main__":
 	curr_dir_path = os.path.dirname(os.path.realpath(__file__))
 	target_dir_path = os.path.join(curr_dir_path, 'results/MP8_MP9_results/')
 
-	listOfHeaders = ["Detector type", "Descriptor type", "Average matches", "Average time"]
+	listOfHeaders = ["Detector type", "Descriptor type", "Average matches", "Average time (ms)"]
 	listOfValues = []
 
 	for root,dirs,files in os.walk(target_dir_path):

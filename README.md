@@ -1,7 +1,7 @@
 # SFND 2D Feature Tracking
 ## Sensor Fusion Engineer Nanodegree
 
-The aim of this project is to compare different combinations of keypoint detector/descriptors and matching techniques and to find which one is the most relevant in order to build a robust collision avoidance system. This system uses the Time-To-Collision metrics of a preceding vehicle in the traffic calculated based on a sequence of images given by a mono camera installed on our vehicle.
+The aim of this project is to compare different combinations of keypoint detector/descriptors and matching techniques and to find which one is the most relevant in order to build a robust collision avoidance system. This system uses the Time-To-Collision metrics of a preceding vehicle in the traffic calculated based on a sequence of images given by a mono camera installed on a vehicle.
 
 ### Overview
 
@@ -190,7 +190,7 @@ cout << "# keypoints removed = " << knn_matches.size() - matches.size() << endl;
 
 ### MP.7 Performance Evaluation 1 :
 
-#### Task :__ 
+#### Task : 
 Count the number of keypoints on the preceding vehicle for all 10 images and take note of the distribution of their neighborhood size. Do this for all the detectors you have implemented. 
 
 Results are stored in the "/results/MP7_results/" folder in csv files under the name "MP7_" + detector type.
@@ -198,7 +198,7 @@ Results are stored in the "/results/MP7_results/" folder in csv files under the 
 
 ### MP.8 Performance Evaluation 2 :
 
-#### Task :__ 
+#### Task : 
 Count the number of matched keypoints for all 10 images using all possible combinations of detectors and descriptors. In the matching step, the BF approach is used with the descriptor distance ratio set to 0.8.
 
 Results are stored in the "/results/MP8_MP9_results/" folder in csv files under the name "DETECTORTYPE_DESCRIPTORTYPE_MATCHINGMETHOD_SELECTINGMETHOD.csv".
@@ -212,47 +212,74 @@ Results are stored in the "/results/MP8_MP9_results/" folder in csv files under 
 
 From these csv files we can compute the average matches number and the average computing time for each detector/descriptor combination (See MP9_results in the results folder):
 
-| Detector type | Descriptor type | Average matches | Average time | 
-|---------------|-----------------|-----------------|--------------| 
-| BRISK         | SIFT            | 182             | 50.4         | 
-| SIFT          | BRISK           | 65              | 72.35        | 
-| AKAZE         | BRISK           | 135             | 47.37        | 
-| FAST          | BRIEF           | 122             | 1.52         | 
-| SHITOMASI     | BRIEF           | 104             | 11.6         | 
-| ORB           | BRIEF           | 60              | 6.05         | 
-| HARRIS        | FREAK           | 16              | 39.37        | 
-| AKAZE         | BRIEF           | 140             | 47.13        | 
-| SHITOMASI     | FREAK           | 85              | 37.15        | 
-| ORB           | BRISK           | 83              | 6.24         | 
-| FAST          | BRISK           | 99              | 2.2          | 
-| ORB           | SIFT            | 84              | 30.76        | 
-| FAST          | FREAK           | 97              | 30.03        | 
-| BRISK         | BRISK           | 174             | 32.31        | 
-| AKAZE         | AKAZE           | 139             | 85.64        | 
-| FAST          | ORB             | 120             | 3.7          | 
-| BRISK         | FREAK           | 169             | 59.17        | 
-| BRISK         | ORB             | 167             | 38.75        | 
-| HARRIS        | SIFT            | 18              | 26.36        | 
-| BRISK         | BRIEF           | 189             | 31.2         | 
-| AKAZE         | ORB             | 131             | 52.97        | 
-| SHITOMASI     | SIFT            | 103             | 25.11        | 
-| SHITOMASI     | BRISK           | 85              | 11.8         | 
-| ORB           | FREAK           | 46              | 33.82        | 
-| AKAZE         | SIFT            | 141             | 62.82        | 
-| SIFT          | BRIEF           | 78              | 83.9         | 
-| HARRIS        | BRISK           | 15              | 13.83        | 
-| FAST          | SIFT            | 116             | 15.68        | 
-| ORB           | ORB             | 84              | 15.05        | 
-| AKAZE         | FREAK           | 132             | 75.34        | 
-| HARRIS        | ORB             | 17              | 15.46        | 
-| HARRIS        | BRIEF           | 19              | 13.14        | 
-| SIFT          | FREAK           | 66              | 115.82       | 
-| SHITOMASI     | ORB             | 100             | 13.94        | 
-| SIFT          | SIFT            | 88              | 132.99       | 
-
-TODO: CHOOSE TOP 3 COMBINATIONS
+| Detector type | Descriptor type | Average matches | Average time (ms) | 
+|---------------|-----------------|-----------------|-------------------| 
+| BRISK         | SIFT            | 182             | 50.4         	| 
+| SIFT          | BRISK           | 65              | 72.35        	| 
+| AKAZE         | BRISK           | 135             | 47.37        	| 
+| FAST          | BRIEF           | 122             | 1.52         	| 
+| SHITOMASI     | BRIEF           | 104             | 11.6         	| 
+| ORB           | BRIEF           | 60              | 6.05         	| 
+| HARRIS        | FREAK           | 16              | 39.37        	| 
+| AKAZE         | BRIEF           | 140             | 47.13        	| 
+| SHITOMASI     | FREAK           | 85              | 37.15        	| 
+| ORB           | BRISK           | 83              | 6.24         	| 
+| FAST          | BRISK           | 99              | 2.2          	| 
+| ORB           | SIFT            | 84              | 30.76        	| 
+| FAST          | FREAK           | 97              | 30.03        	| 
+| BRISK         | BRISK           | 174             | 32.31        	| 
+| AKAZE         | AKAZE           | 139             | 85.64        	| 
+| FAST          | ORB             | 120             | 3.7          	| 
+| BRISK         | FREAK           | 169             | 59.17        	| 
+| BRISK         | ORB             | 167             | 38.75        	| 
+| HARRIS        | SIFT            | 18              | 26.36        	| 
+| BRISK         | BRIEF           | 189             | 31.2         	| 
+| AKAZE         | ORB             | 131             | 52.97        	| 
+| SHITOMASI     | SIFT            | 103             | 25.11        	| 
+| SHITOMASI     | BRISK           | 85              | 11.8         	| 
+| ORB           | FREAK           | 46              | 33.82        	| 
+| AKAZE         | SIFT            | 141             | 62.82        	| 
+| SIFT          | BRIEF           | 78              | 83.9         	| 
+| HARRIS        | BRISK           | 15              | 13.83        	| 
+| FAST          | SIFT            | 116             | 15.68        	| 
+| ORB           | ORB             | 84              | 15.05        	| 
+| AKAZE         | FREAK           | 132             | 75.34        	| 
+| HARRIS        | ORB             | 17              | 15.46        	| 
+| HARRIS        | BRIEF           | 19              | 13.14        	| 
+| SIFT          | FREAK           | 66              | 115.82      	| 
+| SHITOMASI     | ORB             | 100             | 13.94        	| 
+| SIFT          | SIFT            | 88              | 132.99       	| 
 
 
 
+## Conclusion
 
+Regarding all the data gathered:
+
+- If we value __speed__, the TOP 3 detector/descriptor combination would be:
+
+
+| TOP | Detector type | Descriptor type | Average time (ms) | 
+|-----|---------------|-----------------|-------------------| 
+| 1   | FAST          | BRIEF           | 1.52         	    | 
+| 2   | FAST          | BRISK           | 2.2        	    | 
+| 3   | FAST          | ORB             | 3.7        	    | 
+
+FAST as a detector seems to be clearly ahead in terms of computing speed.
+
+- If we value __accuracy__, the TOP 3 detector/descriptor combination would be:
+
+| TOP | Detector type | Descriptor type | Average matches | 
+|-----|---------------|-----------------|-----------------| 
+| 1   | BRISK         | BRIEF           | 189         	  | 
+| 2   | BRISK         | SIFT            | 182        	  | 
+| 3   | BRISK         | BRISK           | 174        	  | 
+
+BRISK as a detector seems to be clearly ahead in terms of accuracy.
+
+For our application, although accuracy is an important property, I do not recommend using one of these 3 combinations as one of their major downside is that they might be too slow (~ 30-50 ms) for a real time application involving security, such as our Collision Avoidance System.
+
+However, if we look carefully at our top 3 speed detector/descriptor combinations, we can notice that not only they are fast, but they also provide an interesting number of matches (FAST-BRIEF = 122 matches, FAST-ORB = 120 matches).
+
+That's why, for the purpose of our project, I suggest using the __FAST-BRIEF__ combination as it gives a good accuracy while being also super fast.
 
